@@ -180,6 +180,7 @@ class rundeck::config(
 
   create_resources(rundeck::config::project, $projects)
 
+  /*
   class { '::rundeck::config::global::web':
     security_role                => $security_role,
     session_timeout              => $session_timeout,
@@ -188,6 +189,7 @@ class rundeck::config(
     notify                       => Service[$service_name],
     require                      => Class['::rundeck::install'],
   }
+  */
 
   if !empty($kerberos_realms) {
     file { "${properties_dir}/krb5.conf":
